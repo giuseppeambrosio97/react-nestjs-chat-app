@@ -1,4 +1,3 @@
-import { Divider } from "primereact/divider";
 import Chat from "../../chat/Chat";
 import SideMenu from "./components/SideMenu";
 
@@ -9,20 +8,18 @@ export function HomePage() {
         <h2 className="text-xl font-bold">Chattly:</h2>
         <div>chat with broskok</div>
       </div>
-      <div className="grid grid-cols-7 gap-5">
-        <div className="col-span-1 ">
+      <div className="grid grid-cols-8 gap-5 h-full pb-4 mb-2 max-h-[90%]">
+        <div className="col-span-2 ">
           <SideMenu />
         </div>
         <div className="col-span-6 justify-center">
-          <div className="flex">
-            <Chat
-              chatConfig={{
-                chatId: "chatId",
-                chatName: "chattly",
-                initMessage: "Ciao parla pure :)",
-              }}
-            />
-          </div>
+          <Chat
+            chatConfig={{
+              chatId: "chatId",
+              chatName: "chattly",
+              initMessage: "Ciao parla pure :)",
+            }}
+          />
         </div>
       </div>
     </div>

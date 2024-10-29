@@ -99,22 +99,20 @@ function Chat(props: Readonly<ChatProps>) {
   };
 
   return (
-    <div className="flex flex-col grow h-full w-full">
-      <div className="flex flex-col gap-3 p-1 max-h-full h-full">
-        <div className="flex rounded-lg m-1 max-h-full grow">
-          <div
-            className="flex grow flex-col gap-3 max-w-full overflow-y-scroll"
-            ref={chatContainerRef}
-          >
-            {/* Render user input and chat responses */}
-            {chatHistory.map((message: TChatMessage, index: number) => (
-              <ChatMessage
-                key={index}
-                message={message}
-                showActionsBox={message.author !== username}
-              />
-            ))}
-          </div>
+    <div className="flex flex-col h-full w-full max-h-full">
+      <div className="flex flex-col gap-3 p-1 h-full">
+        <div
+          className="flex grow flex-col gap-3 max-h-[90%]"
+          ref={chatContainerRef}
+        >
+          {/* Render user input and chat responses */}
+          {chatHistory.map((message: TChatMessage, index: number) => (
+            <ChatMessage
+              key={index}
+              message={message}
+              showActionsBox={message.author !== username}
+            />
+          ))}
         </div>
         <div className="flex">
           {isTyping && (
@@ -140,12 +138,14 @@ function Chat(props: Readonly<ChatProps>) {
 
           <Button
             icon="pi pi-send"
+            className="shadow-xl"
             rounded
             onClick={handleOnClickSendButton}
             aria-label="Send Message"
           />
           <Button
             icon="pi pi-trash"
+            className="shadow-xl"
             rounded
             onClick={() => setChatHistory([])}
             aria-label="Delete ChatHistory"

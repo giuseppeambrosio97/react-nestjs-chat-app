@@ -17,7 +17,7 @@ export function LoginPage() {
     <div className="card">
       <h2 className="text-3xl mb-7">Login Page</h2>
       <div className="flex justify-center">
-        <div className="flex flex-col justify-center w-3/12 gap-3">
+        <div className="flex flex-col justify-center w-3/12 gap-3 max-w-64">
           <input
             className="p-3 rounded"
             type="text"
@@ -41,6 +41,7 @@ export function LoginPage() {
             type="submit"
             icon="pi pi-check"
             onClick={handleLogin}
+            className="shadow"
           />
         </div>
       </div>
